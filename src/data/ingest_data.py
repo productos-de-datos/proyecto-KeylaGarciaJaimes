@@ -20,13 +20,14 @@ def ingest_data():
 
     import requests
 
-    for i in range(1995,2021):
+    for i in range(1995,2022):
         if i == 2016 or i==2017:
             url_xls = 'https://github.com/jdvelasq/datalabs/blob/master/datasets/precio_bolsa_nacional/xls/{}.xls?raw=true'
             file = requests.get(url_xls, allow_redirects=True)
              #with open(os.path.join("data_lake", "landing"))
             open('data_lake/landing/{}.xls'.format(i), 'wb').write(file.content)
         else: 
+            
             url_xlsx = 'https://github.com/jdvelasq/datalabs/blob/master/datasets/precio_bolsa_nacional/xls/{}.xlsx?raw=true'
             file = requests.get(url_xlsx, allow_redirects=True)
             open('data_lake/landing/{}.xlsx'.format(i), 'wb').write(file.content)
