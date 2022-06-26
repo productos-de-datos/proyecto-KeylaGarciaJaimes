@@ -1,3 +1,4 @@
+
 def create_data_lake():
     """Cree el data lake con sus capas.
 
@@ -21,10 +22,26 @@ def create_data_lake():
 
 
     """
-    raise NotImplementedError("Implementar esta función")
+
+    #Crear directorio padre
+    import os 
+   
+    os.mkdir("data_lake")
+    parent_directory = "data_lake"
+    directory = ["landing", "raw", "cleansed", "business"]
+
+
+    for d in directory:
+        os.mkdir(os.path.join("data_lake", d))
+
+    dir_business = ["business/reports", "business/features","business/reports/figures", "business/forecasts"]
+
+    for d in dir_business:
+        os.mkdir(os.path.join("data_lake", d))
+
 
 
 if __name__ == "__main__":
     import doctest
-
+    create_data_lake()
     doctest.testmod()
