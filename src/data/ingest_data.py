@@ -1,11 +1,9 @@
-"""
-Módulo de ingestión de datos.
--------------------------------------------------------------------------------
+# pylint: disable=consider-using-f-string
+# pylint: disable=import-outside-toplevel
+# pylint: disable=consider-using-with
+# pylint: disable=line-too-long
 
-"""
-
-
-from urllib import request
+"""Modulo de ingestiónd de data"""
 
 
 def ingest_data():
@@ -16,23 +14,28 @@ def ingest_data():
     descarga debe realizarse usando únicamente funciones de Python.
 
     """
-    #raise NotImplementedError("Implementar esta función")
 
-    import requests 
+    import requests
 
-    for i in range(1995,2022):
-        if i == 2016 or i==2017:
-            url_xls = 'https://github.com/jdvelasq/datalabs/blob/master/datasets/precio_bolsa_nacional/xls/{}.xls?raw=true'.format(i)
+    for fecha in range(1995, 2022):
+        if fecha in (2016, 2017):
+            url_xls = "https://github.com/jdvelasq/datalabs/blob/master/datasets/precio_bolsa_nacional/xls/{}.xls?raw=true".format(
+                fecha
+            )
             file = requests.get(url_xls, allow_redirects=True)
-             #with open(os.path.join("data_lake", "landing"))
-            open('data_lake/landing/{}.xls'.format(i), 'wb').write(file.content)
-        else: 
-            
-            url_xlsx = 'https://github.com/jdvelasq/datalabs/blob/master/datasets/precio_bolsa_nacional/xls/{}.xlsx?raw=true'.format(i)
+
+            open("data_lake/landing/{}.xls".format(fecha), "wb").write(file.content)
+        else:
+
+            url_xlsx = "https://github.com/jdvelasq/datalabs/blob/master/datasets/precio_bolsa_nacional/xls/{}.xlsx?raw=true".format(
+                fecha
+            )
             file = requests.get(url_xlsx, allow_redirects=True)
-            open('data_lake/landing/{}.xlsx'.format(i), 'wb').write(file.content)
+            open("data_lake/landing/{}.xlsx".format(fecha), "wb").write(file.content)
+
 
 if __name__ == "__main__":
     import doctest
+
     ingest_data()
     doctest.testmod()
