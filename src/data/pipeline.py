@@ -1,7 +1,3 @@
-# pylint: disable=consider-using-f-string
-# pylint: disable=import-outside-toplevel
-# pylint: disable=consider-using-with
-# pylint: disable=line-too-long
 """
 Construya un pipeline de Luigi que:
 

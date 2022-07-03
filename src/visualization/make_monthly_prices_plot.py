@@ -1,9 +1,4 @@
-"""Compute_monthly_prices"""
-# pylint: disable=consider-using-f-string
-# pylint: disable=import-outside-toplevel
-# pylint: disable=consider-using-with
-# pylint: disable=line-too-long
-
+"""Gráfico que representa los precios promedios diarios"""
 
 import pandas as pd
 import matplotlib.pyplot as plt

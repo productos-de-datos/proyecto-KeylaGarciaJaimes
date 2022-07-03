@@ -1,8 +1,4 @@
-# pylint: disable=consider-using-f-string
-# pylint: disable=import-outside-toplevel
-# pylint: disable=consider-using-with
-# pylint: disable=line-too-long
-"""Transformar datos"""
+"""Módulo de transformación de data"""
 
 
 def transform_data():

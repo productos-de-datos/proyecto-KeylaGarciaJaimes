@@ -1,5 +1,3 @@
-# pylint: disable=import-outside-toplevel
-# Pylint: disable=consider-using-f-string
 """función encargada de crear el data lake y sus subcarpetas"""
 
 

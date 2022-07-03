@@ -1,8 +1,4 @@
-# pylint: disable=consider-using-f-string
-# pylint: disable=import-outside-toplevel
-# pylint: disable=consider-using-with
-# pylint: disable=line-too-long
-"""Compute_monthly_prices"""
+"""Función que computa los precios promedios mensuales"""
 
 
 def compute_monthly_prices():

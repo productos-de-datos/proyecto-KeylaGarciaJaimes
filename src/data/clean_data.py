@@ -1,8 +1,4 @@
-# pylint: disable=consider-using-f-string
-# pylint: disable=import-outside-toplevel
-# pylint: disable=consider-using-with
-# pylint: disable=line-too-long
-"""Clean_data"""
+"""Limpieza de datos"""
 
 
 def clean_data():
