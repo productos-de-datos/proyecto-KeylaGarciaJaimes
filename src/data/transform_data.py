@@ -1,3 +1,9 @@
+# pylint: disable=consider-using-f-string
+# pylint: disable=import-outside-toplevel
+# pylint: disable=consider-using-with
+# pylint: disable=line-too-long
+"""Transformar datos"""
+
 
 def transform_data():
     """Transforme los archivos xls a csv.
@@ -8,29 +14,44 @@ def transform_data():
     H23.
 
     """
-    #raise NotImplementedError("Implementar esta función")
+    # raise NotImplementedError("Implementar esta función")
     import pandas as pd
-    
-    for i in range(1995,2022):
-        if i == 2016 or i==2017:
-            df_xls=pd.read_excel('data_lake/landing/{}.xls'.format(i),index_col=None, header=None)
-            df = df_xls.dropna(axis=0, thresh=10)
-            df = df.iloc[1:]
-            df=df[df.columns[0:25]]
-            df[0]=pd.to_datetime(df[0], format="%Y/%m/%d")
-            df.to_csv('data_lake/raw/{}.csv'.format(i), encoding='utf-8', index=False, header=True)
+
+    for i in range(1995, 2022):
+        if i in (2016, 2017):
+            df_xls = pd.read_excel(
+                "data_lake/landing/{}.xls".format(i), index_col=None, header=None
+            )
+            dframe = df_xls.dropna(axis=0, thresh=10)
+            dframe = dframe.iloc[1:]
+            dframe = dframe[dframe.columns[0:25]]
+            dframe[0] = pd.to_datetime(dframe[0], format="%Y/%m/%d")
+            dframe.to_csv(
+                "data_lake/raw/{}.csv".format(i),
+                encoding="utf-8",
+                index=False,
+                header=True,
+            )
 
         else:
-            df_xls=pd.read_excel ('data_lake/landing/{}.xlsx'.format(i),index_col=None, header=None)
-            df = df_xls.dropna(axis=0, thresh=10)
-            df = df.iloc[1:]
-            df=df[df.columns[0:25]]
-            df[0]=pd.to_datetime(df[0], format="%Y/%m/%d")
-            df.to_csv('data_lake/raw/{}.csv'.format(i), encoding='utf-8', index=False, header=True)   
+            df_xls = pd.read_excel(
+                "data_lake/landing/{}.xlsx".format(i), index_col=None, header=None
+            )
+            dframe = df_xls.dropna(axis=0, thresh=10)
+            dframe = dframe.iloc[1:]
+            dframe = dframe[dframe.columns[0:25]]
+            dframe[0] = pd.to_datetime(dframe[0], format="%Y/%m/%d")
+            dframe.to_csv(
+                "data_lake/raw/{}.csv".format(i),
+                encoding="utf-8",
+                index=False,
+                header=True,
+            )
 
 
 if __name__ == "__main__":
     import doctest
+
     transform_data()
 
     doctest.testmod()
