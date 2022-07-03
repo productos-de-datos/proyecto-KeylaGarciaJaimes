@@ -17,6 +17,11 @@ En luigi llame las funciones que ya creo.
 """
 import luigi
 from luigi import Task, LocalTarget
+import ingest_data
+import transform_data
+import clean_data
+import compute_daily_prices
+import compute_monthly_prices
 
 
 class IngestData(Task):
@@ -25,7 +30,7 @@ class IngestData(Task):
 
     def run(self):
         with self.output().open("w") as outfile:
-            ingest_data()
+            ingest_data.ingest_data()
 
 
 class TransformData(Task):
@@ -37,7 +42,7 @@ class TransformData(Task):
 
     def run(self):
         with self.output().open("w") as outfile:
-            transform_data()
+            transform_data.transform_data()
 
 
 class CleanData(Task):
@@ -49,7 +54,7 @@ class CleanData(Task):
 
     def run(self):
         with self.output().open("w") as outfile:
-            clean_data()
+            clean_data.clean_data()
 
 
 class DailyPrices(Task):
@@ -61,7 +66,7 @@ class DailyPrices(Task):
 
     def run(self):
         with self.output().open("w") as outfile:
-            compute_daily_prices()
+            compute_daily_prices.compute_daily_prices()
 
 
 class MontlyPrices(Task):
@@ -73,7 +78,7 @@ class MontlyPrices(Task):
 
     def run(self):
         with self.output().open("w") as outfile:
-            compute_monthly_prices()
+            compute_monthly_prices.compute_monthly_prices()
 
 
 class PreciosPromedioMensual(Task):
