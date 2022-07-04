@@ -4,16 +4,16 @@ Hacerlo con un list comprehension.
 """
 # pylint: disable=unused-import
 
+import os
 import pytest
-import pandas as pd
+
+
 
 # @pytest.fixture(scope='session')
 
 
 def nombres():
     """función que trae los archivos de raw"""
-    import os
-    import pandas as pd
 
     lista = []
     for file in os.listdir("data_lake/raw"):
@@ -54,5 +54,5 @@ def test_data_():
         "2020.csv",
         "2021.csv"
     ]
-    print(assert1[0], expect1[0])
-    assert expect1[0] == assert1[0]
+    print(len(assert1), len(expect1))
+    assert len(expect1) == len(assert1)
