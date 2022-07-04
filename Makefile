@@ -42,8 +42,8 @@ make_monthly_prices_plot:
 make_features:
 	python3 src/features/make_features.py
 
-train_model:
-	python3 src/model/train_model.py
+train_daily_model:
+	python3 src/models/train_daily_model.py
 
 make_forecasts:
 	python3 src/model/make_forecasts.py
