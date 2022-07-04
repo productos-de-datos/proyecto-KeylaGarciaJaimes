@@ -2,6 +2,8 @@
 Obtener nombres de la carpeta data_lake/raw en una lista.
 Hacerlo con un list comprehension.
 """
+# pylint: disable=unused-import
+
 import pytest
 import pandas as pd
 
@@ -9,6 +11,7 @@ import pandas as pd
 
 
 def nombres():
+    """función que trae los archivos de raw"""
     import os
     import pandas as pd
 
@@ -20,6 +23,7 @@ def nombres():
 
 
 def test_data_():
+    """test"""
     assert1 = nombres()
     expect1 = [
         "1995.csv",
@@ -49,5 +53,5 @@ def test_data_():
         "2019.csv",
         "2020.csv",
     ]
-    print(assert1[10], expect1[10])
-    assert expect1[10] == assert1[10]
+    print(assert1[10], expect1[11])
+    assert expect1[11] == assert1[10]
