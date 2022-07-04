@@ -22,6 +22,8 @@ def nombres():
 def test_data_():
     assert1 = nombres()
     expect1 = [
+        "1995.csv",
+        "1996.csv",
         "1997.csv",
         "1998.csv",
         "1999.csv",
