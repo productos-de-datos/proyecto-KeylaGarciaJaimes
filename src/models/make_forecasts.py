@@ -1,3 +1,4 @@
+"""make forecasts"""
 def make_forecasts():
     """Construya los pronosticos con el modelo entrenado final.
 
