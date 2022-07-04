@@ -52,6 +52,7 @@ def test_data_():
         "2018.csv",
         "2019.csv",
         "2020.csv",
+        "2021.csv"
     ]
-    print(assert1[10], expect1[11])
-    assert expect1[11] == assert1[10]
+    print(assert1[10], expect1[10])
+    assert expect1[10] == assert1[10]
