@@ -19,7 +19,7 @@ def make_features():
     import shutil
 
     shutil.copyfile('data_lake/business/precios-diarios.csv',
-                    'data_lake/business/features/precios-diarios.csv')
+                    'data_lake/business/features/precios_diarios.csv')
 
 
 if __name__ == "__main__":
